@@ -1,6 +1,6 @@
 # LVThemeKit
 ## 需求
-起点读书 App 里可以皮肤化的 UI 区域分为 3 块（App 皮肤/阅读器主题/其他），这 3 块又和黑夜模式有重叠。
+App 里可以皮肤化的 UI 区域分为 3 块（App 皮肤/阅读器主题/其他），这 3 块又和黑夜模式有重叠。
 
  - App 皮肤区域有首页 4 个 tab bar 页面（还没有实现主题化，在规划中）
  - 阅读器主题区域主要是阅读器相关的设置和菜单页面
@@ -26,4 +26,7 @@
 ![](https://i.loli.net/2019/03/31/5ca0a5f095a1a.png)
 ![](https://i.loli.net/2019/03/31/5ca0ab3507209.png)
   
+## 重构前后对比
+![](https://ws3.sinaimg.cn/large/005BYqpggy1g1mx1031r9j31d30u07u7.jpg)
+
 代码实现样例：[LVThemeKit](https://github.com/lvpengwei/LVThemeKit)
