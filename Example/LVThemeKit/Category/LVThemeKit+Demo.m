@@ -22,7 +22,13 @@
     return cancelable;
 }
 - (void)cancel {
-    [[NSNotificationCenter defaultCenter] removeObserver:self.observer];
+    if (self.observer) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self.observer];
+        self.observer = nil;
+    }
+}
+- (void)dealloc {
+    [self cancel];
 }
 @end
 
