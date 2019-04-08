@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6SR-wx-xIh">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nIH-UD-8Ef">
+            <objects>
+                <navigationController id="6SR-wx-xIh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pzy-rF-tOy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="j9O-hq-u6g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMC-EB-5Zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1563" y="140"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r9F-Wd-zUP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fC-bI-Vfx">
+                                        <rect key="frame" x="153" y="0.0" width="108" height="30"/>
+                                        <state key="normal" title="打开一个新页面"/>
+                                        <connections>
+                                            <action selector="openNewPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A5a-IB-Oen"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-8e-eTq" userLabel="阅读器主题Button">
+                                        <rect key="frame" x="145.5" y="124" width="123" height="30"/>
+                                        <state key="normal" title="阅读器主题Button"/>
+                                        <connections>
+                                            <action selector="readerThemeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BBC-Ho-hs0"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anS-Xp-0Vt" customClass="UIViewWithLayer">
+                                        <rect key="frame" x="87" y="247.5" width="240" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" placeholder="YES" id="oRU-og-xSy"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阅读器主题Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCg-So-1OQ">
+                                        <rect key="frame" x="143" y="391.5" width="128.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-8G-GTb" userLabel="App皮肤Button">
+                                        <rect key="frame" x="155" y="506" width="104" height="30"/>
+                                        <state key="normal" title="App皮肤Button"/>
+                                        <connections>
+                                            <action selector="appThemeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nmj-Zb-BwN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App皮肤Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oev-GS-wN8" userLabel="App皮肤Label">
+                                        <rect key="frame" x="153.5" y="629.5" width="107.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAG-L5-NgK">
+                                        <rect key="frame" x="153.5" y="744" width="107" height="30"/>
+                                        <state key="normal" title="黑夜模式Button"/>
+                                        <connections>
+                                            <action selector="qdThemeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fz2-cc-39Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="r9F-Wd-zUP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GPp-hH-yIH"/>
+                            <constraint firstItem="r9F-Wd-zUP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZhT-iO-lb6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r9F-Wd-zUP" secondAttribute="trailing" id="hBB-tU-g3C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r9F-Wd-zUP" secondAttribute="bottom" id="vcM-55-yPX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RCI-1e-MF8"/>
+                    <connections>
+                        <outlet property="appThemeButton" destination="ehc-8G-GTb" id="qp3-En-had"/>
+                        <outlet property="appThemeLabel" destination="Oev-GS-wN8" id="pzG-VA-LNf"/>
+                        <outlet property="qdThemeButton" destination="DAG-L5-NgK" id="c2a-eB-YIm"/>
+                        <outlet property="readerThemeButton" destination="7aC-8e-eTq" id="P1q-ee-nlB"/>
+                        <outlet property="readerThemeLabel" destination="KCg-So-1OQ" id="Cfb-e2-bCe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-755" y="140"/>
+        </scene>
+    </scenes>
+</document>

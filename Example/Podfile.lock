@@ -1,0 +1,16 @@
+PODS:
+  - LVThemeKit (0.0.1)
+
+DEPENDENCIES:
+  - LVThemeKit (from `../`)
+
+EXTERNAL SOURCES:
+  LVThemeKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LVThemeKit: 3544caf4c10122c2d87332b05bed5c876218cc92
+
+PODFILE CHECKSUM: 720f3d7d15f48336a5f8e7609cc2aa512250d03d
+
+COCOAPODS: 1.6.1

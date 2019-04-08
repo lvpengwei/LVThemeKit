@@ -1,0 +1,23 @@
+//
+//  UISlider+LVThemeKit.h
+//  LVThemeKit
+//
+//  Created by lvpengwei on 2019/4/8.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@class LVThemeColor, UISliderThemeKit;
+@interface UISliderTheme : LVThemeObject<UISliderThemeKit *>
+@property (nonatomic, strong) LVThemeColor * _Nullable minimumTrackTintColor;
+@property (nonatomic, strong) LVThemeColor * _Nullable maximumTrackTintColor;
+@end
+@interface UISliderThemeKit : LVThemeKit<UISliderTheme *, UISlider *>
+@end
+@interface UISlider (LVThemeKit)
+@property (nonatomic, strong, readonly) UISliderThemeKit *sliderTK;
+@end
+
+NS_ASSUME_NONNULL_END

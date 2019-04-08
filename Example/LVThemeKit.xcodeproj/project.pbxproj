@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9ACF914F9D01B6D0B7C27A66 /* libPods-LVThemeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F55CBBE4695D144CDAEA270 /* libPods-LVThemeKit.a */; };
+		E63982C1224F694E00F29F99 /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = E63982C0224F694E00F29F99 /* UIColor+hex.m */; };
+		E69DFC7B225B33DB00E77C71 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC74225B33DB00E77C71 /* ThemeManager.m */; };
+		E69DFC7C225B33DB00E77C71 /* QDThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC75225B33DB00E77C71 /* QDThemeManager.m */; };
+		E69DFC7D225B33DB00E77C71 /* AppThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC78225B33DB00E77C71 /* AppThemeManager.m */; };
+		E69DFC7E225B33DB00E77C71 /* ReaderThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC7A225B33DB00E77C71 /* ReaderThemeManager.m */; };
+		E69DFC82225B34CD00E77C71 /* LVThemeColor+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC81225B34CD00E77C71 /* LVThemeColor+Demo.m */; };
+		E69DFC85225B350F00E77C71 /* LVThemeString+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC84225B350F00E77C71 /* LVThemeString+Demo.m */; };
+		E69DFC88225B356700E77C71 /* LVThemeKit+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC87225B356700E77C71 /* LVThemeKit+Demo.m */; };
+		E69DFCA0225B564900E77C71 /* UIViewWithLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E69DFC9F225B564900E77C71 /* UIViewWithLayer.m */; };
+		E6CC1BCC224F5DDB00A5C282 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CC1BCB224F5DDB00A5C282 /* AppDelegate.m */; };
+		E6CC1BCF224F5DDB00A5C282 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CC1BCE224F5DDB00A5C282 /* ViewController.m */; };
+		E6CC1BD2224F5DDB00A5C282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CC1BD0224F5DDB00A5C282 /* Main.storyboard */; };
+		E6CC1BD4224F5DDB00A5C282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6CC1BD3224F5DDB00A5C282 /* Assets.xcassets */; };
+		E6CC1BD7224F5DDB00A5C282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CC1BD5224F5DDB00A5C282 /* LaunchScreen.storyboard */; };
+		E6CC1BDA224F5DDB00A5C282 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CC1BD9224F5DDB00A5C282 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2778D6590DD31F2C73B7C983 /* Pods-LVThemeKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LVThemeKit.debug.xcconfig"; path = "Target Support Files/Pods-LVThemeKit/Pods-LVThemeKit.debug.xcconfig"; sourceTree = "<group>"; };
+		3F55CBBE4695D144CDAEA270 /* libPods-LVThemeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LVThemeKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA655D5B147233FAAB3A9E8 /* Pods-LVThemeKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LVThemeKit.release.xcconfig"; path = "Target Support Files/Pods-LVThemeKit/Pods-LVThemeKit.release.xcconfig"; sourceTree = "<group>"; };
+		E63982BF224F694E00F29F99 /* UIColor+hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+hex.h"; sourceTree = "<group>"; };
+		E63982C0224F694E00F29F99 /* UIColor+hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hex.m"; sourceTree = "<group>"; };
+		E69DFC73225B33DB00E77C71 /* AppThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppThemeManager.h; sourceTree = "<group>"; };
+		E69DFC74225B33DB00E77C71 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		E69DFC75225B33DB00E77C71 /* QDThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDThemeManager.m; sourceTree = "<group>"; };
+		E69DFC76225B33DB00E77C71 /* ReaderThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThemeManager.h; sourceTree = "<group>"; };
+		E69DFC77225B33DB00E77C71 /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		E69DFC78225B33DB00E77C71 /* AppThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppThemeManager.m; sourceTree = "<group>"; };
+		E69DFC79225B33DB00E77C71 /* QDThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeManager.h; sourceTree = "<group>"; };
+		E69DFC7A225B33DB00E77C71 /* ReaderThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThemeManager.m; sourceTree = "<group>"; };
+		E69DFC80225B34CD00E77C71 /* LVThemeColor+Demo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LVThemeColor+Demo.h"; sourceTree = "<group>"; };
+		E69DFC81225B34CD00E77C71 /* LVThemeColor+Demo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LVThemeColor+Demo.m"; sourceTree = "<group>"; };
+		E69DFC83225B350F00E77C71 /* LVThemeString+Demo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LVThemeString+Demo.h"; sourceTree = "<group>"; };
+		E69DFC84225B350F00E77C71 /* LVThemeString+Demo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LVThemeString+Demo.m"; sourceTree = "<group>"; };
+		E69DFC86225B356700E77C71 /* LVThemeKit+Demo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LVThemeKit+Demo.h"; sourceTree = "<group>"; };
+		E69DFC87225B356700E77C71 /* LVThemeKit+Demo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LVThemeKit+Demo.m"; sourceTree = "<group>"; };
+		E69DFC9E225B564900E77C71 /* UIViewWithLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewWithLayer.h; sourceTree = "<group>"; };
+		E69DFC9F225B564900E77C71 /* UIViewWithLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewWithLayer.m; sourceTree = "<group>"; };
+		E6CC1BC7224F5DDB00A5C282 /* LVThemeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LVThemeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6CC1BCA224F5DDB00A5C282 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E6CC1BCB224F5DDB00A5C282 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E6CC1BCD224F5DDB00A5C282 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E6CC1BCE224F5DDB00A5C282 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E6CC1BD1224F5DDB00A5C282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6CC1BD3224F5DDB00A5C282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6CC1BD6224F5DDB00A5C282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E6CC1BD8224F5DDB00A5C282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6CC1BD9224F5DDB00A5C282 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6CC1BC4224F5DDB00A5C282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ACF914F9D01B6D0B7C27A66 /* libPods-LVThemeKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6667A176B7755014C311F1EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2778D6590DD31F2C73B7C983 /* Pods-LVThemeKit.debug.xcconfig */,
+				AAA655D5B147233FAAB3A9E8 /* Pods-LVThemeKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E69DFC72225B33DB00E77C71 /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				E69DFC73225B33DB00E77C71 /* AppThemeManager.h */,
+				E69DFC78225B33DB00E77C71 /* AppThemeManager.m */,
+				E69DFC77225B33DB00E77C71 /* ThemeManager.h */,
+				E69DFC74225B33DB00E77C71 /* ThemeManager.m */,
+				E69DFC79225B33DB00E77C71 /* QDThemeManager.h */,
+				E69DFC75225B33DB00E77C71 /* QDThemeManager.m */,
+				E69DFC76225B33DB00E77C71 /* ReaderThemeManager.h */,
+				E69DFC7A225B33DB00E77C71 /* ReaderThemeManager.m */,
+			);
+			path = ThemeManager;
+			sourceTree = "<group>";
+		};
+		E69DFC7F225B34B700E77C71 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E69DFC80225B34CD00E77C71 /* LVThemeColor+Demo.h */,
+				E69DFC81225B34CD00E77C71 /* LVThemeColor+Demo.m */,
+				E69DFC83225B350F00E77C71 /* LVThemeString+Demo.h */,
+				E69DFC84225B350F00E77C71 /* LVThemeString+Demo.m */,
+				E69DFC86225B356700E77C71 /* LVThemeKit+Demo.h */,
+				E69DFC87225B356700E77C71 /* LVThemeKit+Demo.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E6CC1BBE224F5DDB00A5C282 = {
+			isa = PBXGroup;
+			children = (
+				E6CC1BC9224F5DDB00A5C282 /* LVThemeKit */,
+				E6CC1BC8224F5DDB00A5C282 /* Products */,
+				6667A176B7755014C311F1EB /* Pods */,
+				F9BCB040BBF226589F3E507C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E6CC1BC8224F5DDB00A5C282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6CC1BC7224F5DDB00A5C282 /* LVThemeKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6CC1BC9224F5DDB00A5C282 /* LVThemeKit */ = {
+			isa = PBXGroup;
+			children = (
+				E69DFC7F225B34B700E77C71 /* Category */,
+				E69DFC72225B33DB00E77C71 /* ThemeManager */,
+				E6CC1C04224F666400A5C282 /* Util */,
+				E6CC1BCA224F5DDB00A5C282 /* AppDelegate.h */,
+				E6CC1BCB224F5DDB00A5C282 /* AppDelegate.m */,
+				E6CC1BCD224F5DDB00A5C282 /* ViewController.h */,
+				E6CC1BCE224F5DDB00A5C282 /* ViewController.m */,
+				E6CC1BD0224F5DDB00A5C282 /* Main.storyboard */,
+				E6CC1BD3224F5DDB00A5C282 /* Assets.xcassets */,
+				E6CC1BD5224F5DDB00A5C282 /* LaunchScreen.storyboard */,
+				E6CC1BD8224F5DDB00A5C282 /* Info.plist */,
+				E6CC1BD9224F5DDB00A5C282 /* main.m */,
+				E69DFC9E225B564900E77C71 /* UIViewWithLayer.h */,
+				E69DFC9F225B564900E77C71 /* UIViewWithLayer.m */,
+			);
+			path = LVThemeKit;
+			sourceTree = "<group>";
+		};
+		E6CC1C04224F666400A5C282 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E63982BF224F694E00F29F99 /* UIColor+hex.h */,
+				E63982C0224F694E00F29F99 /* UIColor+hex.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F9BCB040BBF226589F3E507C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F55CBBE4695D144CDAEA270 /* libPods-LVThemeKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6CC1BC6224F5DDB00A5C282 /* LVThemeKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6CC1BDD224F5DDB00A5C282 /* Build configuration list for PBXNativeTarget "LVThemeKit" */;
+			buildPhases = (
+				73D6212142ABB7BD331E33D2 /* [CP] Check Pods Manifest.lock */,
+				E6CC1BC3224F5DDB00A5C282 /* Sources */,
+				E6CC1BC4224F5DDB00A5C282 /* Frameworks */,
+				E6CC1BC5224F5DDB00A5C282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LVThemeKit;
+			productName = LVThemeKit;
+			productReference = E6CC1BC7224F5DDB00A5C282 /* LVThemeKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6CC1BBF224F5DDB00A5C282 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = lvpengwei;
+				TargetAttributes = {
+					E6CC1BC6224F5DDB00A5C282 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = E6CC1BC2224F5DDB00A5C282 /* Build configuration list for PBXProject "LVThemeKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6CC1BBE224F5DDB00A5C282;
+			productRefGroup = E6CC1BC8224F5DDB00A5C282 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6CC1BC6224F5DDB00A5C282 /* LVThemeKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6CC1BC5224F5DDB00A5C282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6CC1BD7224F5DDB00A5C282 /* LaunchScreen.storyboard in Resources */,
+				E6CC1BD4224F5DDB00A5C282 /* Assets.xcassets in Resources */,
+				E6CC1BD2224F5DDB00A5C282 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73D6212142ABB7BD331E33D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LVThemeKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6CC1BC3224F5DDB00A5C282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69DFC7E225B33DB00E77C71 /* ReaderThemeManager.m in Sources */,
+				E69DFC7C225B33DB00E77C71 /* QDThemeManager.m in Sources */,
+				E69DFC7D225B33DB00E77C71 /* AppThemeManager.m in Sources */,
+				E63982C1224F694E00F29F99 /* UIColor+hex.m in Sources */,
+				E6CC1BCF224F5DDB00A5C282 /* ViewController.m in Sources */,
+				E69DFC7B225B33DB00E77C71 /* ThemeManager.m in Sources */,
+				E6CC1BDA224F5DDB00A5C282 /* main.m in Sources */,
+				E6CC1BCC224F5DDB00A5C282 /* AppDelegate.m in Sources */,
+				E69DFC82225B34CD00E77C71 /* LVThemeColor+Demo.m in Sources */,
+				E69DFC85225B350F00E77C71 /* LVThemeString+Demo.m in Sources */,
+				E69DFCA0225B564900E77C71 /* UIViewWithLayer.m in Sources */,
+				E69DFC88225B356700E77C71 /* LVThemeKit+Demo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E6CC1BD0224F5DDB00A5C282 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6CC1BD1224F5DDB00A5C282 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E6CC1BD5224F5DDB00A5C282 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6CC1BD6224F5DDB00A5C282 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6CC1BDB224F5DDB00A5C282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E6CC1BDC224F5DDB00A5C282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6CC1BDE224F5DDB00A5C282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2778D6590DD31F2C73B7C983 /* Pods-LVThemeKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3A75DREAB8;
+				INFOPLIST_FILE = LVThemeKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lvpengwei.LVThemeKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6CC1BDF224F5DDB00A5C282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAA655D5B147233FAAB3A9E8 /* Pods-LVThemeKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3A75DREAB8;
+				INFOPLIST_FILE = LVThemeKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lvpengwei.LVThemeKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6CC1BC2224F5DDB00A5C282 /* Build configuration list for PBXProject "LVThemeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6CC1BDB224F5DDB00A5C282 /* Debug */,
+				E6CC1BDC224F5DDB00A5C282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6CC1BDD224F5DDB00A5C282 /* Build configuration list for PBXNativeTarget "LVThemeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6CC1BDE224F5DDB00A5C282 /* Debug */,
+				E6CC1BDF224F5DDB00A5C282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6CC1BBF224F5DDB00A5C282 /* Project object */;
+}
