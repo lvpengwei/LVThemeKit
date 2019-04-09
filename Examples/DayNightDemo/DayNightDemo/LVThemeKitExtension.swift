@@ -45,6 +45,9 @@ class DayNightManager {
         guard let hex = map[type.rawValue][key] else { return nil }
         return UIColor(hex: hex)
     }
+    func image() -> UIImage? {
+        return !night ? UIImage(named: "24_rijian") : UIImage(named: "24_yejian")
+    }
     class func change() {
         shared.type = shared.night ? .day : .night
     }
@@ -110,6 +113,14 @@ extension LVThemeColor {
     class var highlight: LVThemeColor {
         return LVThemeColor.instance({ () -> UIColor? in
             return DayNightManager.shared.color(with: DAY_NIGHT_HIGHLIGHT)
+        })
+    }
+}
+
+extension LVThemeImage {
+    class var dayNightImage: LVThemeImage {
+        return LVThemeImage.instance({ () -> UIImage? in
+            return DayNightManager.shared.image()
         })
     }
 }

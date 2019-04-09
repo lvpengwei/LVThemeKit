@@ -12,7 +12,7 @@
 @implementation LVThemeString (Demo)
 + (instancetype)qdThemeString {
     return [self instance:^id _Nonnull{
-        return [QDThemeManager share].isNight ? @"黑夜" : @"白天";
+        return [QDThemeManager share].isNight ? @"黑夜Button" : @"白天Button";
     }];
 }
 @end

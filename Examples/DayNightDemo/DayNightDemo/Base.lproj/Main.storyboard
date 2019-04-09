@@ -45,14 +45,20 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0P-YR-Vua">
-                                        <rect key="frame" x="134" y="228" width="114" height="30"/>
+                                        <rect key="frame" x="134" y="138" width="114" height="30"/>
                                         <state key="normal" title="Button-切换模式"/>
                                         <connections>
                                             <action selector="switchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9r-7Q-1jP"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="m70-zu-5sz">
+                                        <rect key="frame" x="-2" y="276" width="386" height="31"/>
+                                    </slider>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="24_rijian" translatesAutoresizingMaskIntoConstraints="NO" id="JxP-Vy-37c">
+                                        <rect key="frame" x="179" y="414" width="24" height="24"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qk-2R-l6h">
-                                        <rect key="frame" x="151" y="456" width="80" height="44"/>
+                                        <rect key="frame" x="151" y="546" width="80" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="FIB-Vg-zn2"/>
@@ -70,6 +76,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="m70-zu-5sz" firstAttribute="leading" secondItem="J3x-QF-clZ" secondAttribute="leading" id="0As-22-eKx"/>
+                                    <constraint firstAttribute="trailing" secondItem="m70-zu-5sz" secondAttribute="trailing" id="Jqs-kE-wPF"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,8 +93,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="tje-KR-yEq"/>
                     <connections>
+                        <outlet property="imageView" destination="JxP-Vy-37c" id="Niy-OX-ZJe"/>
                         <outlet property="label" destination="3eb-sA-k3O" id="SP8-K6-ckZ"/>
                         <outlet property="openNewBtn" destination="Fud-qf-OTx" id="v5a-zE-Chy"/>
+                        <outlet property="slider" destination="m70-zu-5sz" id="AWC-sh-s5B"/>
                         <outlet property="switchBtn" destination="z0P-YR-Vua" id="CM4-ho-LxM"/>
                         <outlet property="testView" destination="7Qk-2R-l6h" id="VRl-5n-fHG"/>
                     </connections>
@@ -94,4 +106,7 @@
             <point key="canvasLocation" x="-468" y="-48"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="24_rijian" width="24" height="24"/>
+    </resources>
 </document>
