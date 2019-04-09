@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UILabelThemeKit : LVThemeKit<UILabelTheme *, UILabel *>
 @end
 @interface UILabel (LVThemeKit)
-@property (nonatomic, strong, readonly) UILabelThemeKit * _Nullable labelTK;
+@property (nonatomic, strong, readonly) UILabelThemeKit *labelTK;
 @end
 
 NS_ASSUME_NONNULL_END

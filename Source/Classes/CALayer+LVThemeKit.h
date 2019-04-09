@@ -6,6 +6,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "LVThemeKit.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CALayerThemeKit : LVThemeKit<CALayerTheme *, CALayer *>
 @end
 @interface CALayer (LVThemeKit)
-@property (nonatomic, strong, readonly) CALayerThemeKit * _Nullable layerTK;
+@property (nonatomic, strong, readonly) CALayerThemeKit *layerTK;
 @end
 
 NS_ASSUME_NONNULL_END

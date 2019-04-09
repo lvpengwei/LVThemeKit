@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIButtonThemeKit : LVThemeKit<UIButtonTheme *, UIButton *>
 @end
 @interface UIButton (LVThemeKit)
-@property (nonatomic, strong, readonly) UIButtonThemeKit * _Nullable buttonTK;
+@property (nonatomic, strong, readonly) UIButtonThemeKit *buttonTK;
 @end
 
 NS_ASSUME_NONNULL_END

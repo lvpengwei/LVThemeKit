@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LVThemeResource<T> : NSObject
 @property (nonatomic, readonly) T _Nullable resValue;
-+ (instancetype)instance:(T (^)(void))block;
++ (instancetype)instance:(T _Nullable (^)(void))block;
 @end
 
 NS_ASSUME_NONNULL_END

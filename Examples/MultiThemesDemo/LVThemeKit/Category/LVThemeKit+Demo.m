@@ -11,24 +11,45 @@
 #import "ReaderThemeManager.h"
 #import "AppThemeManager.h"
 
-@interface NotificationCancelable : NSObject<LVThemeKitCancelable>
-@property (nonatomic, strong) id observer;
-+ (instancetype)instanceWith:(id)observer;
+@interface _Observer : NSObject <LVThemeKitObserverGenerator>
+@property (nonatomic, strong) id ob;
+- (NSString *)notificationName;
 @end
-@implementation NotificationCancelable
-+ (instancetype)instanceWith:(id)observer {
-    NotificationCancelable *cancelable = [NotificationCancelable new];
-    cancelable.observer = observer;
-    return cancelable;
+@implementation _Observer
+- (NSString *)notificationName {
+    return @"";
 }
-- (void)cancel {
-    if (self.observer) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self.observer];
-        self.observer = nil;
-    }
+- (void)lvThemeKitObserverGeneratorCompletion:(LVThemeKitCompletion)completion {
+    self.ob = [[NSNotificationCenter defaultCenter] addObserverForName:[self notificationName] object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        completion();
+    }];
 }
 - (void)dealloc {
-    [self cancel];
+    if (self.ob) [[NSNotificationCenter defaultCenter] removeObserver:self.ob];
+}
+@end
+
+@interface QDObserver : _Observer
+@end
+@implementation QDObserver
+- (NSString *)notificationName {
+    return QD_THEME_CHANGED_NOTIFICATION;
+}
+@end
+
+@interface ReaderObserver : _Observer
+@end
+@implementation ReaderObserver
+- (NSString *)notificationName {
+    return READER_THEME_CHANGED_NOTIFICATION;
+}
+@end
+
+@interface AppObserver : _Observer
+@end
+@implementation AppObserver
+- (NSString *)notificationName {
+    return APP_THEME_CHANGED_NOTIFICATION;
 }
 @end
 
@@ -44,19 +65,7 @@
 }
 + (void)demoConfig {
     LVThemeKitConfig *config = [[LVThemeKitConfig alloc] init];
-    config.generators = @[^id<LVThemeKitCancelable>(LVThemeKitCompletion completion) {
-        return [NotificationCancelable instanceWith:[[NSNotificationCenter defaultCenter] addObserverForName:QD_THEME_CHANGED_NOTIFICATION object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-            completion();
-        }]];
-    },^id<LVThemeKitCancelable>(LVThemeKitCompletion completion) {
-        return [NotificationCancelable instanceWith:[[NSNotificationCenter defaultCenter] addObserverForName:READER_THEME_CHANGED_NOTIFICATION object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-            completion();
-        }]];
-    },^id<LVThemeKitCancelable>(LVThemeKitCompletion completion) {
-        return [NotificationCancelable instanceWith:[[NSNotificationCenter defaultCenter] addObserverForName:APP_THEME_CHANGED_NOTIFICATION object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-            completion();
-        }]];
-    }];
+    config.generators = @[[QDObserver class], [ReaderObserver class], [AppObserver class]];
     config.applyProperty = ^(LVThemeKit *tk, NSString * _Nonnull key, LVThemeKitApplyPropertyCompletion  _Nonnull completion) {
         if ([QDThemeManager share].isNight && [tk.qd valueForKey:key]) {
             completion(tk.qd);

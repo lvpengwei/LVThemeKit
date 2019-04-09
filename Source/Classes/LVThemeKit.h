@@ -10,18 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LVThemeKitCancelable <NSObject>
-- (void)cancel;
-@end
-
 @class LVThemeKit;
 typedef void(^LVThemeKitCompletion)(void);
+@protocol LVThemeKitObserverGenerator <NSObject>
+- (void)lvThemeKitObserverGeneratorCompletion:(LVThemeKitCompletion)completion;
+@end
+
 typedef void(^LVThemeKitApplyPropertyCompletion)(id theme);
-typedef id<LVThemeKitCancelable>_Nullable(^LVThemeKitObserveGenerator)(LVThemeKitCompletion completion);
 typedef void(^LVThemeKitApplyPropertyBlock)(LVThemeKit *tk, NSString *key, LVThemeKitApplyPropertyCompletion completion);
 @interface LVThemeKitConfig : NSObject
 // 生成皮肤监听的数组
-@property (nonatomic, copy) NSArray<LVThemeKitObserveGenerator> *generators;
+@property (nonatomic, copy) NSArray<Class<LVThemeKitObserverGenerator>> *generators;
 // 自定义皮肤的应用顺序，默认是数组顺序。如果是多区域主题可以用到这个字段。
 @property (nonatomic, copy) LVThemeKitApplyPropertyBlock _Nullable applyProperty;
 @end

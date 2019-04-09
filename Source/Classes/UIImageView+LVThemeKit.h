@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImageViewThemeKit : LVThemeKit<UIImageViewTheme *, UIImageView *>
 @end
 @interface UIImageView (LVThemeKit)
-@property (nonatomic, strong, readonly) UIImageViewThemeKit * _Nullable imageTK;
+@property (nonatomic, strong, readonly) UIImageViewThemeKit *imageTK;
 @end
 
 NS_ASSUME_NONNULL_END

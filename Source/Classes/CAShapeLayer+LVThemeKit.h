@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CAShapeLayerThemeKit : LVThemeKit<CAShapeLayerTheme *, CAShapeLayer *>
 @end
 @interface CAShapeLayer (LVThemeKit)
-@property (nonatomic, strong, readonly) CAShapeLayerThemeKit * _Nullable shapeTK;
+@property (nonatomic, strong, readonly) CAShapeLayerThemeKit *shapeTK;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -48,7 +48,7 @@
 @interface LVThemeKit<T, V> ()
 @property (nonatomic, strong, readwrite) NSArray<T> *themes;
 @property (nonatomic, weak, readwrite) V view;
-@property (nonatomic, strong) NSMutableDictionary<NSNumber *, id<LVThemeKitCancelable>> *observers;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, id> *observers;
 @property (nonatomic, weak) id readerObserver;
 @property (nonatomic, weak) id appObserver;
 @property (nonatomic, weak) id qdObserver;
@@ -77,8 +77,9 @@ static LVThemeKitConfig *_config = nil;
     if (self) {
         self.view = view;
         NSAssert(LVThemeKit.config != nil, @"LVThemeKit.config 不能为空");
+        NSAssert(LVThemeKit.config.generators.count != 0, @"LVThemeKit.config.generators 不能为空");
         NSMutableArray *themes = @[].mutableCopy;
-        for (LVThemeKitObserveGenerator generator in LVThemeKit.config.generators) {
+        for (id generator in LVThemeKit.config.generators) {
             [themes addObject:[[clz alloc] initWithTK:self]];
         }
         self.themes = themes.copy;
@@ -116,13 +117,14 @@ static LVThemeKitConfig *_config = nil;
     if (index < 0 || index >= self.themes.count) return;
     if (self.observers[@(index)]) return;
     __weak typeof(self) weakSelf = self;
-    id cancelable = LVThemeKit.config.generators[index](^{
+    Class clz = LVThemeKit.config.generators[index];
+    id<LVThemeKitObserverGenerator> generator = [[clz alloc] init];
+    [generator lvThemeKitObserverGeneratorCompletion:(^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (!strongSelf) return;
         [strongSelf apply];
-    });
-    if (cancelable == nil) return;
-    self.observers[@(index)] = cancelable;
+    })];
+    self.observers[@(index)] = generator;
 }
 - (void)apply:(id)object key:(NSString *)key {
     if ([self.view isKindOfClass:[CALayer class]]) {
@@ -132,11 +134,6 @@ static LVThemeKitConfig *_config = nil;
         }
     } else {
         [self.view setValue:((LVThemeResource *)[object valueForKey:key]).resValue forKey:key];
-    }
-}
-- (void)dealloc {
-    for (id<LVThemeKitCancelable> cancelable in self.observers.allValues) {
-        [cancelable cancel];
     }
 }
 - (void)apply {
