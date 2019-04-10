@@ -1,0 +1,16 @@
+PODS:
+  - LVThemeKit/Swift (0.0.6)
+
+DEPENDENCIES:
+  - LVThemeKit/Swift (from `../../`)
+
+EXTERNAL SOURCES:
+  LVThemeKit:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  LVThemeKit: fb16ed8207c5ffbd57b31da3aa15854604ec7833
+
+PODFILE CHECKSUM: c8fdf06b146eaf644545aaa0eb8e5af8f3ee1a2a
+
+COCOAPODS: 1.6.1

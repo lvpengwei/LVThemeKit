@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+inhibit_all_warnings!
+
+target 'DayNightDemoSwift' do
+	use_frameworks!
+	
+    pod 'LVThemeKit/Swift', :path => '../../'
+end
