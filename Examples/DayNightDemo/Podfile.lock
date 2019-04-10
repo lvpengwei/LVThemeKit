@@ -1,5 +1,5 @@
 PODS:
-  - LVThemeKit (0.0.1)
+  - LVThemeKit (0.0.2)
 
 DEPENDENCIES:
   - LVThemeKit (from `../../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  LVThemeKit: 3544caf4c10122c2d87332b05bed5c876218cc92
+  LVThemeKit: c0a5cc6210532bc79cd3a601d3aca5faeaac1b02
 
 PODFILE CHECKSUM: cd334e5972e636c19324ca5f89e4ab3b660a3b97
 

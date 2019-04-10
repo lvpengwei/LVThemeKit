@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeColor, LVThemeAttributedString, UILabelThemeKit;
-@interface UILabelTheme : LVThemeObject<UILabelThemeKit *>
+@class LVThemeColor, LVThemeAttributedString;
+@interface UILabelTheme : LVThemeObject
 @property (nonatomic, strong) LVThemeColor * _Nullable textColor;
 @property (nonatomic, strong) LVThemeAttributedString * _Nullable attributedText;
 @end

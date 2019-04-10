@@ -9,8 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeColor, UISliderThemeKit;
-@interface UISliderTheme : LVThemeObject<UISliderThemeKit *>
+@class LVThemeColor;
+@interface UISliderTheme : LVThemeObject
 @property (nonatomic, strong) LVThemeColor * _Nullable minimumTrackTintColor;
 @property (nonatomic, strong) LVThemeColor * _Nullable maximumTrackTintColor;
 @end

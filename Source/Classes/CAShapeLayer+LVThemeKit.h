@@ -9,8 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeColor, CAShapeLayerThemeKit;
-@interface CAShapeLayerTheme : LVThemeObject<CAShapeLayerThemeKit *>
+@class LVThemeColor;
+@interface CAShapeLayerTheme : LVThemeObject
 @property (nonatomic, strong) LVThemeColor * _Nullable fillColor;
 @end
 @interface CAShapeLayerThemeKit : LVThemeKit<CAShapeLayerTheme *, CAShapeLayer *>

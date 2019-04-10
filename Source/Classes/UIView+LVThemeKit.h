@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeColor, UIViewThemeKit;
-@interface UIViewTheme : LVThemeObject<UIViewThemeKit *>
+@class LVThemeColor;
+@interface UIViewTheme : LVThemeObject
 @property (nonatomic, strong) LVThemeColor * _Nullable backgroundColor;
 @property (nonatomic, strong) LVThemeColor * _Nullable tintColor;
 @end

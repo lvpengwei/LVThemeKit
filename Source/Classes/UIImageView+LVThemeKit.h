@@ -9,8 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeImage, UIImageViewThemeKit;
-@interface UIImageViewTheme : LVThemeObject<UIImageViewThemeKit *>
+@class LVThemeImage;
+@interface UIImageViewTheme : LVThemeObject
 @property (nonatomic, strong) LVThemeImage * _Nullable image;
 @end
 @interface UIImageViewThemeKit : LVThemeKit<UIImageViewTheme *, UIImageView *>

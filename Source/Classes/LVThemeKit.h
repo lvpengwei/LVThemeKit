@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeKit;
+@class LVThemeKit, LVThemeObject, LVThemeResource;
 typedef void(^LVThemeKitCompletion)(void);
 @protocol LVThemeKitObserverGenerator <NSObject>
 - (void)lvThemeKitObserverGeneratorCompletion:(LVThemeKitCompletion)completion;
@@ -25,10 +25,13 @@ typedef void(^LVThemeKitApplyPropertyBlock)(LVThemeKit *tk, NSString *key, LVThe
 @property (nonatomic, copy) LVThemeKitApplyPropertyBlock _Nullable applyProperty;
 @end
 
-@class LVThemeResource;
-@interface LVThemeObject<K> : NSObject
-@property (nonatomic, weak, readonly) K tk;
-- (instancetype)initWithTK:(K)tk;
+@protocol LVThemeObjectProtocol <NSObject>
+- (void)themeObject:(LVThemeObject *)object property:(NSString *)key valueChanged:(LVThemeResource *)res;
+@end
+
+@interface LVThemeObject : NSObject
+@property (nonatomic, weak, readonly) id<LVThemeObjectProtocol> tk;
+- (instancetype)initWithTK:(id<LVThemeObjectProtocol>)tk;
 + (NSArray *)keyPaths;
 @end
 
@@ -42,7 +45,6 @@ typedef void(^LVThemeKitApplyPropertyBlock)(LVThemeKit *tk, NSString *key, LVThe
 @property (nonatomic, weak, readonly) V view;
 + (instancetype)instanceWithView:(V)view;
 + (Class)tClass;
-- (void)themeObject:(T)object property:(NSString *)key valueChanged:(LVThemeResource *)res;
 - (void)applyProperty:(NSString *)key;
 - (void)apply;
 @end

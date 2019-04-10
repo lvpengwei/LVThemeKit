@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeColor, UIButtonThemeKit, LVThemeString, LVThemeAttributedString, LVThemeImage;
-@interface UIButtonTheme : LVThemeObject<UIButtonThemeKit *>
+@class LVThemeColor, LVThemeString, LVThemeAttributedString, LVThemeImage;
+@interface UIButtonTheme : LVThemeObject
 - (void)setTitleColor:(LVThemeColor *  _Nullable)titleColor forState:(UIControlState)state;
 - (void)setTitle:(LVThemeString *  _Nullable)title forState:(UIControlState)state;
 - (void)setImage:(LVThemeImage * _Nullable)image forState:(UIControlState)state;

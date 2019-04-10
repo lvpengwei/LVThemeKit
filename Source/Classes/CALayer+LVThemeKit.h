@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LVThemeColor, CALayerThemeKit;
-@interface CALayerTheme : LVThemeObject<CALayerThemeKit *>
+@class LVThemeColor;
+@interface CALayerTheme : LVThemeObject
 @property (nonatomic, strong) LVThemeColor * _Nullable backgroundColor;
 @property (nonatomic, strong) LVThemeColor * _Nullable borderColor;
 @end

@@ -12,11 +12,11 @@
 @implementation LVThemeKitConfig
 @end
 
-@interface LVThemeObject<K> ()
-@property (nonatomic, weak, readwrite) K tk;
+@interface LVThemeObject () <LVThemeObjectProtocol>
+@property (nonatomic, weak, readwrite) id<LVThemeObjectProtocol> tk;
 @end
 @implementation LVThemeObject
-- (instancetype)initWithTK:(id)tk {
+- (instancetype)initWithTK:(id<LVThemeObjectProtocol>)tk {
     self = [super init];
     if (self) {
         self.tk = tk;
