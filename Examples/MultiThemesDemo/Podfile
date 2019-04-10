@@ -4,5 +4,5 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 
 target 'LVThemeKit' do
-    pod 'LVThemeKit', :path => '../../'
+    pod 'LVThemeKit/ObjC', :path => '../../'
 end

@@ -1,16 +1,16 @@
 PODS:
-  - LVThemeKit (0.0.6)
+  - LVThemeKit/ObjC (0.0.6)
 
 DEPENDENCIES:
-  - LVThemeKit (from `../../`)
+  - LVThemeKit/ObjC (from `../../`)
 
 EXTERNAL SOURCES:
   LVThemeKit:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  LVThemeKit: 58f3c2addf1ab483ffc35a20dac07952464030b2
+  LVThemeKit: fb16ed8207c5ffbd57b31da3aa15854604ec7833
 
-PODFILE CHECKSUM: 8a552a6c2b56732fa3f11c5b4f9112ffd9eebb00
+PODFILE CHECKSUM: 5f2f024d5fd59da7765b044f9c7531b2be5cd9ff
 
 COCOAPODS: 1.6.1
