@@ -5,11 +5,11 @@ s.version = @version
 s.summary = "Theme kit."
 s.description = "Theme kit"
 s.homepage = "https://github.com/lvpengwei/LVThemeKit"
-s.license = {:type => 'MIT', :file => 'LICENSE' }
-s.author = "lvpengwei"
-s.ios.deployment_target = '8.0'
-s.source = { :git => "https://github.com/lvpengwei/LVThemeKit.git"}
-s.source_files = ['Source/Classes/**/*.{h,m}']
+s.license = {:type => "MIT", :file => "LICENSE" }
+s.author = { "lvpengwei" => "pengwei.lv@gmail.com" }
+s.ios.deployment_target = "8.0"
+s.source = { :git => "https://github.com/lvpengwei/LVThemeKit.git" }
+s.source_files = [ "Source/Classes/**/*.{h,m}" ]
 s.prefix_header_contents = <<-EOS
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
@@ -27,5 +27,4 @@ s.prefix_header_contents = <<-EOS
 #import "CAShapeLayer+LVThemeKit.h"
 #endif
 EOS
-
 end
