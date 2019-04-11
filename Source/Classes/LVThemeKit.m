@@ -12,7 +12,7 @@
 @implementation LVThemeKitConfig
 @end
 
-@interface LVThemeObject () <LVThemeObjectProtocol>
+@interface LVThemeObject ()
 @property (nonatomic, weak, readwrite) id<LVThemeObjectProtocol> tk;
 @end
 @implementation LVThemeObject
@@ -45,7 +45,7 @@
 }
 @end
 
-@interface LVThemeKit<T, V> ()
+@interface LVThemeKit<T, V> () <LVThemeObjectProtocol>
 @property (nonatomic, strong, readwrite) NSArray<T> *themes;
 @property (nonatomic, weak, readwrite) V view;
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, id> *observers;
