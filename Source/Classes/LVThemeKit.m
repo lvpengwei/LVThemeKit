@@ -79,7 +79,7 @@ static LVThemeKitConfig *_config = nil;
         NSAssert(LVThemeKit.config != nil, @"LVThemeKit.config 不能为空");
         NSAssert(LVThemeKit.config.generators.count != 0, @"LVThemeKit.config.generators 不能为空");
         NSMutableArray *themes = @[].mutableCopy;
-        for (id generator in LVThemeKit.config.generators) {
+        for (int i = 0; i < LVThemeKit.config.generators.count; i++) {
             [themes addObject:[[clz alloc] initWithTK:self]];
         }
         self.themes = themes.copy;
