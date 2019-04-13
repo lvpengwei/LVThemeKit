@@ -18,17 +18,7 @@ Pod::Spec.new do |s|
 		#ifdef __OBJC__
 		#import <UIKit/UIKit.h>
 		#import <Foundation/Foundation.h>
-		#import "LVThemeColor.h"
-		#import "LVThemeImage.h"
-		#import "LVThemeKit.h"
-		#import "LVThemeString.h"
-		#import "UIButton+LVThemeKit.h"
-		#import "UILabel+LVThemeKit.h"
-		#import "UIView+LVThemeKit.h"
-		#import "UISlider+LVThemeKit.h"
-		#import "UIImageView+LVThemeKit.h"
-		#import "CALayer+LVThemeKit.h"
-		#import "CAShapeLayer+LVThemeKit.h"
+		#import "LVThemeKitHeader.h"
 		#endif
 		EOS
 	end
