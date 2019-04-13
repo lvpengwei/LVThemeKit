@@ -1,0 +1,9 @@
+cd Examples/DayNightDemo
+pod install
+cd ../../
+cd Examples/MultiThemesDemo
+pod install
+cd ../../
+cd Examples/DayNightDemoSwift
+pod install
+cd ../../
