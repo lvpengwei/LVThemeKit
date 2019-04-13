@@ -1,4 +1,4 @@
-@version = "0.0.6"
+@version = "1.0.0"
 Pod::Spec.new do |s|
 	s.name = "LVThemeKit"
 	s.version = @version
@@ -9,6 +9,8 @@ Pod::Spec.new do |s|
 	s.author = { "lvpengwei" => "pengwei.lv@gmail.com" }
 	s.ios.deployment_target = '8.0'
 	s.source = { :git => "https://github.com/lvpengwei/LVThemeKit.git", :tag => @version }
+	s.swift_version = '5.0'
+	s.default_subspec = 'ObjC'
 
 	s.subspec 'ObjC' do |objc|
 		objc.source_files = ['Source/ObjC/**/*.{h,m}']

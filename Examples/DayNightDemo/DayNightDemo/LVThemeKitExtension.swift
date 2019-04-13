@@ -54,7 +54,7 @@ class DayNightManager {
     class func config() {
         let conf = LVThemeKitConfig()
         conf.generators = [DayNightObserver.self]
-        LVThemeKit<AnyObject, AnyObject>.config = conf
+        LVThemeKit<LVThemeObject, AnyObject>.config = conf
     }
 }
 
