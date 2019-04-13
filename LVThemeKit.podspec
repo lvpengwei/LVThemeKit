@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 	s.source = { :git => "https://github.com/lvpengwei/LVThemeKit.git", :tag => @version }
 
 	s.subspec 'ObjC' do |objc|
-		objc.source_files = ['Source/Objc/**/*.{h,m}']
+		objc.source_files = ['Source/ObjC/**/*.{h,m}']
 		objc.prefix_header_contents = <<-EOS
 		#ifdef __OBJC__
 		#import <UIKit/UIKit.h>

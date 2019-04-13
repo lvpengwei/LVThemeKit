@@ -11,6 +11,7 @@
 #import <objc/runtime.h>
 #import "LVThemeString.h"
 #import "LVThemeAttributedString.h"
+#import "NSString+LVThemeKit.h"
 
 @interface UIButtonTheme ()
 @property (nonatomic, strong) NSMutableDictionary *titleColorDict;
@@ -29,88 +30,77 @@
     }
     return self;
 }
++ (NSString *)titleColor {
+    return [@"titleColor" undefined];
+}
++ (NSString *)title {
+    return [@"title" undefined];
+}
++ (NSString *)image {
+    return [@"image" undefined];
+}
++ (NSString *)attributedTitle {
+    return [@"attributedTitle" undefined];
+}
++ (NSArray *)keyPaths {
+    return @[[self title], [self titleColor], [self image], [self attributedTitle]];
+}
+- (BOOL)hasValueForKey:(NSString *)key {
+    if ([key isEqualToString:[[self class] titleColor]]) {
+        return self.titleColorDict.count > 0;
+    } else if ([key isEqualToString:[[self class] title]]) {
+        return self.titleDict.count > 0;
+    } else if ([key isEqualToString:[[self class] image]]) {
+        return self.imageDict.count > 0;
+    } else if ([key isEqualToString:[[self class] attributedTitle]]) {
+        return self.attributedTitleDict.count > 0;
+    }
+    return NO;
+}
 - (void)setTitleColor:(LVThemeColor *  _Nullable)titleColor forState:(UIControlState)state {
     [self.titleColorDict setObject:titleColor forKey:@(state)];
-    [self.tk themeObject:self property:@"titleColor" valueChanged:titleColor];
+    [self.tk themeObject:self property:[[self class] titleColor] valueChanged:titleColor];
 }
 - (void)setTitle:(LVThemeString *  _Nullable)title forState:(UIControlState)state {
     [self.titleDict setObject:title forKey:@(state)];
-    [self.tk themeObject:self property:@"title" valueChanged:title];
+    [self.tk themeObject:self property:[[self class] title] valueChanged:title];
 }
 - (void)setImage:(LVThemeImage * _Nullable)image forState:(UIControlState)state {
     [self.imageDict setObject:image forKey:@(state)];
-    [self.tk themeObject:self property:@"image" valueChanged:image];
+    [self.tk themeObject:self property:[[self class] image] valueChanged:image];
 }
 - (void)setAttributedTitle:(LVThemeAttributedString * _Nullable)title forState:(UIControlState)state {
     [self.attributedTitleDict setObject:title forKey:@(state)];
-    [self.tk themeObject:self property:@"attributedTitle" valueChanged:title];
+    [self.tk themeObject:self property:[[self class] attributedTitle] valueChanged:title];
 }
 @end
 @implementation UIButtonThemeKit
 + (Class)tClass {
     return [UIButtonTheme class];
 }
-- (void)applyProperty:(NSString *)key {
-    if ([key isEqualToString:@"image"]) {
-        [self applyImage];
-    } else if ([key isEqualToString:@"titleColor"]) {
-        [self applyTextColor];
-    } else if ([key isEqualToString:@"title"]) {
-        [self applyTitle];
-    } else if ([key isEqualToString:@"attributedTitle"]) {
-        [self applyAttributedTitle];
-    }
-}
-- (void)applyAttributedTitle {
-    for (UIButtonTheme *theme in self.themes) {
-        if (theme.attributedTitleDict.count) {
-            for (NSNumber *key in theme.attributedTitleDict) {
-                LVThemeAttributedString *title = theme.attributedTitleDict[key];
-                [self.view setAttributedTitle:title.resValue forState:key.unsignedIntegerValue];
-            }
-            return;
+- (void)apply:(LVThemeObject *)object key:(NSString *)key {
+    UIButtonTheme *theme = (UIButtonTheme *)object;
+    if ([key isEqualToString:[[theme class] attributedTitle]]) {
+        for (NSNumber *key in theme.attributedTitleDict) {
+            LVThemeAttributedString *title = theme.attributedTitleDict[key];
+            [self.view setAttributedTitle:title.resValue forState:key.unsignedIntegerValue];
+        }
+    } else if ([key isEqualToString:[[theme class] title]]) {
+        for (NSNumber *key in theme.titleDict) {
+            LVThemeString *title = theme.titleDict[key];
+            [self.view setTitle:title.resValue forState:key.unsignedIntegerValue];
+        }
+    } else if ([key isEqualToString:[[theme class] image]]) {
+        for (NSNumber *key in theme.imageDict) {
+            LVThemeImage *image = theme.imageDict[key];
+            [self.view setImage:image.resValue forState:key.unsignedIntegerValue];
+        }
+    } else if ([key isEqualToString:[[theme class] titleColor]]) {
+        for (NSNumber *key in theme.titleColorDict) {
+            LVThemeColor *color = theme.titleColorDict[key];
+            [self.view setTitleColor:color.resValue forState:key.unsignedIntegerValue];
         }
     }
-}
-- (void)applyTitle {
-    for (UIButtonTheme *theme in self.themes) {
-        if (theme.titleDict.count) {
-            for (NSNumber *key in theme.titleDict) {
-                LVThemeString *title = theme.titleDict[key];
-                [self.view setTitle:title.resValue forState:key.unsignedIntegerValue];
-            }
-            return;
-        }
-    }
-}
-- (void)applyImage {
-    for (UIButtonTheme *theme in self.themes) {
-        if (theme.imageDict.count) {
-            for (NSNumber *key in theme.imageDict) {
-                LVThemeImage *image = theme.imageDict[key];
-                [self.view setImage:image.resValue forState:key.unsignedIntegerValue];
-            }
-            return;
-        }
-    }
-}
-- (void)applyTextColor {
-    for (UIButtonTheme *theme in self.themes) {
-        if (theme.titleColorDict.count) {
-            for (NSNumber *key in theme.titleColorDict) {
-                LVThemeColor *color = theme.titleColorDict[key];
-                [self.view setTitleColor:color.resValue forState:key.unsignedIntegerValue];
-            }
-            return;
-        }
-    }
-}
-- (void)apply {
-    [super apply];
-    [self applyProperty:@"titleColor"];
-    [self applyProperty:@"title"];
-    [self applyProperty:@"image"];
-    [self applyProperty:@"attributedTitle"];
 }
 @end
 @implementation UIButton (LVThemeKit)

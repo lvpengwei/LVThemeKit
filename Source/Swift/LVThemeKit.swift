@@ -23,8 +23,8 @@ public class LVThemeObject: NSObject {
     class func keyPaths() -> [String] {
         return []
     }
-    func addObservers() {
-        type(of: self).keyPaths().forEach({ addObserver(for: $0) })
+    private func addObservers() {
+        type(of: self).keyPaths().compactMap({ $0.isUndefined ? nil : $0 }).forEach({ addObserver(for: $0) })
     }
     private func addObserver(for keyPath: String) {
         addObserver(self, forKeyPath: keyPath, options: .new, context: nil)
@@ -34,7 +34,7 @@ public class LVThemeObject: NSObject {
         tk.themeObject(self, property: keyPath, changed: value)
     }
     deinit {
-        type(of: self).keyPaths().forEach({ removeObserver(self, forKeyPath: $0) })
+        type(of: self).keyPaths().compactMap({ $0.isUndefined ? nil : $0 }).forEach({ removeObserver(self, forKeyPath: $0) })
     }
 }
 
@@ -107,5 +107,15 @@ public class LVThemeKit<T: LVThemeObject, V: NSObject>: LVThemeObjectProtocol {
     }
     private func apply() {
         T.keyPaths().forEach({ apply(property: $0) })
+    }
+}
+
+private let PREFIX_UNDEINED = "undefined_"
+extension String {
+    var undefined: String {
+        return PREFIX_UNDEINED + self
+    }
+    var isUndefined: Bool {
+        return hasPrefix(PREFIX_UNDEINED)
     }
 }

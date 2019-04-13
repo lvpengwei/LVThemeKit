@@ -8,6 +8,7 @@
 
 #import "LVThemeKit.h"
 #import "LVThemeResource.h"
+#import "NSString+LVThemeKit.h"
 
 @implementation LVThemeKitConfig
 @end
@@ -32,7 +33,11 @@
         [self addObserverForKeyPath:key];
     }
 }
+- (BOOL)hasValueForKey:(NSString *)key {
+    return [self valueForKey:key] != nil;
+}
 - (void)addObserverForKeyPath:(NSString *)key {
+    if ([key isUndefined]) return;
     [self addObserver:self forKeyPath:key options:NSKeyValueObservingOptionNew context:nil];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -40,6 +45,7 @@
 }
 - (void)dealloc {
     for (NSString *key in [self class].keyPaths) {
+        if ([key isUndefined]) continue;
         [self removeObserver:self forKeyPath:key];
     }
 }
@@ -66,7 +72,7 @@ static LVThemeKitConfig *_config = nil;
 + (Class)tClass {
     @throw [[NSException alloc] initWithName:@"主动异常" reason:@"子类实现" userInfo:nil];
 }
-- (id)theme {
+- (LVThemeObject *)theme {
     return self.themes[0];
 }
 + (instancetype)instanceWithView:(id)view {
@@ -87,28 +93,28 @@ static LVThemeKitConfig *_config = nil;
     }
     return self;
 }
-- (void)themeObject:(id)object property:(NSString *)key valueChanged:(LVThemeResource *)res {
+- (void)themeObject:(LVThemeObject *)object property:(NSString *)key valueChanged:(LVThemeResource *)res {
     [self setupThemeObserve:object property:key valueChanged:res];
     [self applyProperty:key];
 }
 - (void)applyProperty:(NSString *)key {
     if (LVThemeKit.config.applyProperty) {
         __weak typeof(self) weakSelf = self;
-        LVThemeKit.config.applyProperty(self, key, ^(id  _Nonnull theme) {
+        LVThemeKit.config.applyProperty(self, key, ^(LVThemeObject * _Nonnull theme) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if (!strongSelf) return;
             [strongSelf apply:theme key:key];
         });
         return;
     }
-    for (id theme in self.themes) {
-        if ([theme valueForKey:key]) {
+    for (LVThemeObject *theme in self.themes) {
+        if ([theme hasValueForKey:key]) {
             [self apply:theme key:key];
             return;
         }
     }
 }
-- (void)setupThemeObserve:(id)object property:(NSString *)key valueChanged:(LVThemeResource *)res {
+- (void)setupThemeObserve:(LVThemeObject *)object property:(NSString *)key valueChanged:(LVThemeResource *)res {
     NSInteger index = -1;
     for (id t in self.themes) {
         index += 1;
@@ -126,7 +132,7 @@ static LVThemeKitConfig *_config = nil;
     })];
     self.observers[@(index)] = generator;
 }
-- (void)apply:(id)object key:(NSString *)key {
+- (void)apply:(LVThemeObject *)object key:(NSString *)key {
     if ([self.view isKindOfClass:[CALayer class]]) {
         id resValue = ((LVThemeResource *)[object valueForKey:key]).resValue;
         if ([resValue isKindOfClass:[UIColor class]]) {

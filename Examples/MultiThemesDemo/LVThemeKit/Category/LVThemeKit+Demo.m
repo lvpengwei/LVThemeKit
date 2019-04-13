@@ -54,26 +54,26 @@
 @end
 
 @implementation LVThemeKit (Demo)
-- (id)qd {
+- (LVThemeObject *)qd {
     return self.themes[0];
 }
-- (id)reader {
+- (LVThemeObject *)reader {
     return self.themes[1];
 }
-- (id)app {
+- (LVThemeObject *)app {
     return self.themes[2];
 }
 + (void)demoConfig {
     LVThemeKitConfig *config = [[LVThemeKitConfig alloc] init];
     config.generators = @[[QDObserver class], [ReaderObserver class], [AppObserver class]];
     config.applyProperty = ^(LVThemeKit *tk, NSString * _Nonnull key, LVThemeKitApplyPropertyCompletion  _Nonnull completion) {
-        if ([QDThemeManager share].isNight && [tk.qd valueForKey:key]) {
+        if ([QDThemeManager share].isNight && [tk.qd hasValueForKey:key]) {
             completion(tk.qd);
-        } else if ([tk.reader valueForKey:key]) {
+        } else if ([tk.reader hasValueForKey:key]) {
             completion(tk.reader);
-        } else if ([tk.app valueForKey:key]) {
+        } else if ([tk.app hasValueForKey:key]) {
             completion(tk.app);
-        } else if ([tk.qd valueForKey:key]) {
+        } else if ([tk.qd hasValueForKey:key]) {
             completion(tk.qd);
         }
     };

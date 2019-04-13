@@ -16,7 +16,7 @@ typedef void(^LVThemeKitCompletion)(void);
 - (void)lvThemeKitObserverGeneratorCompletion:(LVThemeKitCompletion)completion;
 @end
 
-typedef void(^LVThemeKitApplyPropertyCompletion)(id theme);
+typedef void(^LVThemeKitApplyPropertyCompletion)(LVThemeObject *theme);
 typedef void(^LVThemeKitApplyPropertyBlock)(LVThemeKit *tk, NSString *key, LVThemeKitApplyPropertyCompletion completion);
 @interface LVThemeKitConfig : NSObject
 // 生成皮肤监听的数组
@@ -32,10 +32,11 @@ typedef void(^LVThemeKitApplyPropertyBlock)(LVThemeKit *tk, NSString *key, LVThe
 @interface LVThemeObject : NSObject
 @property (nonatomic, weak, readonly) id<LVThemeObjectProtocol> tk;
 - (instancetype)initWithTK:(id<LVThemeObjectProtocol>)tk;
+- (BOOL)hasValueForKey:(NSString *)key;
 + (NSArray *)keyPaths;
 @end
 
-@interface LVThemeKit<T, V> : NSObject
+@interface LVThemeKit<T: LVThemeObject *, V> : NSObject
 // 不可以为空
 @property (class, nonatomic, strong) LVThemeKitConfig *config;
 // 按照监听数组的顺序生成 T 实例
@@ -45,8 +46,7 @@ typedef void(^LVThemeKitApplyPropertyBlock)(LVThemeKit *tk, NSString *key, LVThe
 @property (nonatomic, weak, readonly) V view;
 + (instancetype)instanceWithView:(V)view;
 + (Class)tClass;
-- (void)applyProperty:(NSString *)key;
-- (void)apply;
+- (void)apply:(T)object key:(NSString *)key;
 @end
 
 NS_ASSUME_NONNULL_END
