@@ -1,4 +1,5 @@
 
+
 # LVThemeKit
 
 [说明](https://github.com/lvpengwei/LVThemeKit/wiki/%E8%AF%B4%E6%98%8E "说明")
@@ -96,3 +97,6 @@ LVThemeKitConfig.config = conf
 或者
 
 `pod 'LVThemeKit/Swift'`
+
+## 类图
+![](https://i.loli.net/2019/04/17/5cb6d05c376eb.jpg)
